@@ -1,0 +1,47 @@
+name: learngual_assessment
+description: A new Flutter project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  auto_size_text: ^3.0.0
+  cached_network_image: ^3.3.0
+  carousel_slider: ^4.2.1
+  device_preview: ^1.1.0
+  easy_localization: ^3.0.3
+  faker: ^2.1.0
+  flutter:
+    sdk: flutter
+  flutter_animated_dialog: ^2.0.1
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.4.2
+  font_awesome_flutter: ^10.5.0
+  google_fonts: ^6.1.0
+  logger: ^2.0.2+1
+  persistent_bottom_nav_bar: ^5.0.2
+  shared_preferences: ^2.2.1
+  shimmer: ^3.0.0
+  url_launcher: ^6.1.14
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^5.1.0
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/
+    - assets/l10n/

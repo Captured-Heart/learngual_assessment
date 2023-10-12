@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "my Samsung",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "deviceId": "192.168.43.1:1031"
+
+        },
+
+        
+        {
+            "name": "My iPhone",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "deviceId": "A5E8313B-433D-47AC-AEFF-FC8244D52DB7"
+
+        },
+        
+       
+    ],
+    "compounds": [
+        {
+            "name": "All Devices",
+            "configurations": [
+                "My iPhone",
+                "my Samsung",
+            ],
+        }
+    ]
+  }

@@ -1,0 +1,1 @@
+export './views/sign_up_screen.dart';
