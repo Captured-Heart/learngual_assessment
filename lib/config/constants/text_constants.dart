@@ -9,7 +9,8 @@ abstract class TextConstant {
   static const haveAnAcct = "Have an account?";
   static const login = 'Login';
   static const firstName = 'First Name';
-  static const enterFullNameAsWritten = 'enter your full name as its written on your id card';
+  static const enterFullNameAsWritten =
+      'enter your full name as its written on your id card';
   static const lastName = 'Last Name';
   static const userName = 'Username';
   static const emailAddress = 'Email address';
@@ -38,8 +39,8 @@ abstract class TextConstant {
   static const chat = 'Chat';
   static const searchMessages = 'Search messages';
   static const typeSomething = 'Type something';
-  // static const or = 'or';
-  // static const or = 'or';
+  static const cancel = 'cancel';
+  static const confirm = 'Confirm';
   // static const or = 'or';
   // static const or = 'or';
   // static const or = 'or';

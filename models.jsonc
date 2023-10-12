@@ -1,0 +1,48 @@
+{
+    "__className": "users_model", // <- The base class name of the object.
+    "__path": "/lib/src/onboard/models/domain", // <- override default path with a new one by adding '__path' key.
+    "r@id": 1, // To mark as required value, change "id" to "r@id".
+    "email": "", // To mark as a default value, change "title" to "d@title".
+    "password": "",
+    "password2": "",
+    "userName": "",
+    "first_name": "",
+    "last_name": ""
+    // "productTags": [],
+    // "relatedProducts": [],
+    // "categoryId": 0,
+    // "subCategoryId": "",
+    // "amount": 1,
+    // "brand":"",
+    // "category": {},
+    // "subCategory":{},
+    // "originalAmount": 0,
+    // "savedPerc": 2.33,
+    // "availableQuantity": 1
+    // "cancelledAt":"",
+    // "pickedUpAt": "",
+    // "deliveredAt":"",
+    // "currentPosition": "",
+    // "riderId": "",
+    // "updatedAt": "",
+    // "deletedAt":"",
+    // "orderItems": [],
+    // "status": 0,
+    // "fulfillmentHubId": ""
+    // "address": {}
+    // "address": {}
+    // "address": {}
+    // "address": {}
+
+    
+
+  }
+
+
+
+  // email: “”,
+  // password: “”,
+  // password2: “”,
+  // username: “”,
+  // first_name: “‘,
+  // last_name: “”,

@@ -1,14 +1,15 @@
 // ignore_for_file: omit_local_variable_types
 
-import 'dart:developer';
-
 import 'package:learngual_assessment/app.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
+// String fullName(){
 
+// }
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // log(SharedPreferencesHelper.getStringPref(SharedPrefKeys.signUpDetails.name));
     final scrollController = ScrollController();
     var faker = Faker();
     List<String> tabsString = ['all', 'fashion', 'sports', 'Phones', 'electronics'];
@@ -21,14 +22,19 @@ class HomeScreen extends ConsumerWidget {
           leadingWidth: 60,
           titleSpacing: 15,
           toolbarHeight: kToolbarHeight * 1.4,
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(
-              faker.image.image(
-                keywords: ['face', 'portrait'],
+          leading: GestureDetector(
+            onTap: (){
+              // ref.read(authNotifierProvider.notifier).home(context: context);
+            },
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                faker.image.image(
+                  keywords: ['face', 'portrait'],
+                ),
+                scale: 0.6,
               ),
-              scale: 0.6,
-            ),
-          ).padOnly(left: 10),
+            ).padOnly(left: 10),
+          ),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

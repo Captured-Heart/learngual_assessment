@@ -2,6 +2,8 @@ import 'package:learngual_assessment/app.dart';
 import 'package:learngual_assessment/src/onboard/views/splash_screen.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferencesHelper.initSharedPref();
   runApp(
     const ProviderScope(
       child: MyApp(),
@@ -20,24 +22,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       restorationScopeId: 'app',
       debugShowCheckedModeBanner: false,
+      scaffoldMessengerKey: rootScaffoldMessengerKey,
       onGenerateTitle: (BuildContext context) => TextConstant.appTitle,
-
       theme: themeBuilder(defaultTheme: ThemeData.light(), isDark: false),
       darkTheme: themeBuilder(defaultTheme: ThemeData.dark(), isDark: true),
-      home: SplashScreen(),
-      // SignUpScreen(),
-      // themeMode: settingsController.themeMode,
-
+      home: const SplashScreen(),
       onGenerateRoute: (RouteSettings routeSettings) {
         return MaterialPageRoute<void>(
           settings: routeSettings,
           builder: (BuildContext context) {
             switch (routeSettings.name) {
-              case createAccountScreenRoute:
+              case NavRoutes.createAccountScreenRoute:
                 return const SignUpScreen();
-              // case SampleItemDetailsView.routeName:
-              //   return const SampleItemDetailsView();
-              // case SampleItemListView.routeName:
+
+              case NavRoutes.loginScreenRoute:
+                return const LoginScreen();
+              case NavRoutes.homeScreenRoute:
+                return const HomeScreen();
+              case NavRoutes.chatScreenRoute:
+                return const ChatHomeScreen();
               default:
                 return const SignUpScreen();
             }

@@ -63,7 +63,8 @@ Widget authTextFieldWidget({
           style: AppTextStyle.bodyMedium,
           inputFormatters:
               // ignore: prefer_single_quotes
-              inputFormatters ?? [FilteringTextInputFormatter.deny(RegExp(r"\s\b|\b\s"))],
+              inputFormatters ??
+                  [FilteringTextInputFormatter.deny(RegExp(r"\s\b|\b\s"))],
           decoration: InputDecoration(
             hintText: hintText,
             prefixIcon: prefixIcon,

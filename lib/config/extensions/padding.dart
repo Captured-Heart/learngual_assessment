@@ -146,7 +146,6 @@ extension StringCasingExtension on String {
       .join(' ');
 
   String toCommaPrices() {
-
     final formatter = NumberFormat("###,###.#", "en_US");
     if (isEmpty) {
       return '';
