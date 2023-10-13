@@ -10,7 +10,8 @@ class LoginScreen extends ConsumerStatefulWidget {
 }
 
 class _LoginScreenState extends ConsumerState<LoginScreen> {
-  final TextEditingControllerClass controllerClass = TextEditingControllerClass();
+  final TextEditingControllerClass controllerClass =
+      TextEditingControllerClass();
   @override
   Widget build(BuildContext context) {
     final userState = ref.watch(authNotifierProvider);
@@ -36,7 +37,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          pushReplaceNamed(context, NavRoutes.createAccountScreenRoute);
+                          pushReplaceNamed(
+                              context, NavRoutes.createAccountScreenRoute);
                         },
                         child: const Text(TextConstant.createAccount),
                       )
@@ -50,9 +52,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           controller: controllerClass.userNameController,
                           context: context,
                           label: TextConstant.userName,
-                          hintText: TextConstant.emailHint,
-                          validator:
-                              RequiredValidator(errorText: AuthErrors.requiredValue.errorMessage),
+                          hintText: TextConstant.userName,
+                          validator: RequiredValidator(
+                              errorText: AuthErrors.requiredValue.errorMessage),
                           // validator: MultiValidator(
                           //   [
                           //     RequiredValidator(
@@ -67,8 +69,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           context: context,
                           label: TextConstant.password,
                           hintText: TextConstant.passwordMustBe,
-                          validator:
-                              RequiredValidator(errorText: AuthErrors.requiredValue.errorMessage),
+                          validator: RequiredValidator(
+                              errorText: AuthErrors.requiredValue.errorMessage),
                         ),
                       ].columnInPadding(15),
                     ).padOnly(top: 10),
@@ -79,12 +81,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    if (controllerClass.signInformKey.currentState!.validate()) {
+                    if (controllerClass.signInformKey.currentState!
+                        .validate()) {
                       ref.read(authNotifierProvider.notifier).signIn(
                         {
-                          'username': controllerClass.userNameController.text.trim(),
+                          'username':
+                              controllerClass.userNameController.text.trim(),
                           // 'email': controllerClass.emailController.text.trim(),
-                          'password': controllerClass.passWordController.text.trim()
+                          'password':
+                              controllerClass.passWordController.text.trim()
                         },
                         context: context,
                         ref: ref,

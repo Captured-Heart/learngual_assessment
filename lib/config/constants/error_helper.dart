@@ -21,7 +21,8 @@ enum FailureToMessage {
   kServerFailureMessage('Oops! Something went wrong. Check your netowrk'),
   kMakingCallMessage('Error while trying to make call'),
 
-  kParsingJsonFailureMessage('Oops! We encountered an issue while processing the data');
+  kParsingJsonFailureMessage(
+      'Oops! We encountered an issue while processing the data');
 
   const FailureToMessage(this.message);
 

@@ -19,21 +19,26 @@ class SharedPreferencesHelper {
 
 //? SAVE theme
   static void setStringPref(String key, String value) {
-    
     prefs?.setString(key, value);
     log({'setStringkey': key, 'setStringValue': value}.toString());
   }
 
   static String getStringPref(String key) {
-    final getStringPref = prefs?.getString(key) ?? '';
-    log(
-      {'getStringKey': key, 'getStringValue': getStringPref }.toString(),
-    );
+    final getStringPref = prefs?.getString(key) ?? 'null';
+    // log(
+    //   {'getStringKey': key, 'getStringValue': getStringPref}.toString(),
+    // );
 
     return getStringPref;
   }
 
-//! set true to check for onBoarding
+  static void removePref(String key) {
+    log('key: $key');
+
+    prefs?.remove(key);
+  }
+
+//!
   static void setBoolPref(String key, {required bool value}) {
     prefs?.setBool(key, value);
     log({'key': key, 'value': value}.toString());

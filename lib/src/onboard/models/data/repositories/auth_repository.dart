@@ -7,6 +7,4 @@ abstract class AuthRepository {
   Future<Either<dynamic, Response>> signUp(Map<String, dynamic> body);
   Future<Either<dynamic, Response>> signIn(Map<String, dynamic> body);
   Future<Either<dynamic, Response>> home();
-
-
 }

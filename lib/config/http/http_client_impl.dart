@@ -15,13 +15,14 @@ class UserHttpClientImpl implements UserHttpClient {
     Map<String, String>? headers,
     bool? withToken,
   }) async {
-    final Map<String, String> defaultHeaders = headers?.cast<String, String>() ?? {}
-      ..addAll({
-        'content-type': 'application/json',
-        'accept': 'application/json',
-        'Authorization':
-            'Bearer ${SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name)}',
-      });
+    final Map<String, String> defaultHeaders =
+        headers?.cast<String, String>() ?? {}
+          ..addAll({
+            'content-type': 'application/json',
+            'accept': 'application/json',
+            'Authorization':
+                'Bearer ${SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name)}',
+          });
     try {
       final response = await http.get(
         Uri.parse(url),

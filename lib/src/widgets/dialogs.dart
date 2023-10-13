@@ -20,7 +20,8 @@ void showScaffoldSnackBarMessage(
             children: [
               Icon(
                 isError ? Icons.cancel : Icons.check_circle,
-                color: isError ? LearnGualColor.textError : LearnGualColor.success,
+                color:
+                    isError ? LearnGualColor.textError : LearnGualColor.success,
               ),
               Expanded(
                 child: Text(
@@ -69,7 +70,8 @@ void warningDialogs({
                 child: Text(
                   errorMessage,
                   textScaleFactor: 1.1,
-                  textAlign: hasImage == true ? TextAlign.left : TextAlign.center,
+                  textAlign:
+                      hasImage == true ? TextAlign.left : TextAlign.center,
                 ),
               )
             ].rowInPadding(10),
@@ -84,16 +86,20 @@ void warningDialogs({
                     () {
                       pop(context);
                     },
-                style: TextButton.styleFrom(foregroundColor: LearnGualColor.textError),
+                style: TextButton.styleFrom(
+                    foregroundColor: LearnGualColor.textError),
                 child: const Text(TextConstant.cancel)),
-            TextButton(onPressed: onPostiveAction, child: const Text(TextConstant.confirm))
+            TextButton(
+                onPressed: onPostiveAction,
+                child: const Text(TextConstant.confirm))
           ],
         );
       },
     );
 
 //
-Future<void> showAuthBottomSheet({required BuildContext context, String? errorMessage}) async {
+Future<void> showAuthBottomSheet(
+    {required BuildContext context, String? errorMessage}) async {
   await showModalBottomSheet(
     context: context,
     shape: const RoundedRectangleBorder(

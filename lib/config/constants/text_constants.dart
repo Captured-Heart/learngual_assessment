@@ -41,8 +41,8 @@ abstract class TextConstant {
   static const typeSomething = 'Type something';
   static const cancel = 'cancel';
   static const confirm = 'Confirm';
-  // static const or = 'or';
-  // static const or = 'or';
+  static const location = 'Location';
+  static const profile = 'Profile';
   // static const or = 'or';
   // static const or = 'or';// static const or = 'or';
   // static const or = 'or';

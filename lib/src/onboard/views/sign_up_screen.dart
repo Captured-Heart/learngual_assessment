@@ -10,7 +10,8 @@ class SignUpScreen extends ConsumerStatefulWidget {
 }
 
 class _SignUpScreenState extends ConsumerState<SignUpScreen> {
-  final TextEditingControllerClass controllerClass = TextEditingControllerClass();
+  final TextEditingControllerClass controllerClass =
+      TextEditingControllerClass();
   @override
   Widget build(BuildContext context) {
     final userState = ref.watch(authNotifierProvider);
@@ -78,7 +79,9 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                       RequiredValidator(
                         errorText: AuthErrors.requiredValue.errorMessage,
                       ),
-                      EmailValidator(errorText: AuthErrors.provideAWorkingEmail.errorMessage),
+                      EmailValidator(
+                          errorText:
+                              AuthErrors.provideAWorkingEmail.errorMessage),
                     ],
                   ),
                 ),
@@ -89,10 +92,12 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   hintText: TextConstant.password,
                   validator: MultiValidator(
                     [
-                      RequiredValidator(errorText: AuthErrors.requiredValue.errorMessage),
+                      RequiredValidator(
+                          errorText: AuthErrors.requiredValue.errorMessage),
                       MinLengthValidator(
                         8,
-                        errorText: AuthErrors.passwordMustBeAtleast.errorMessage,
+                        errorText:
+                            AuthErrors.passwordMustBeAtleast.errorMessage,
                       ),
                     ],
                   ),
@@ -111,19 +116,34 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      if (controllerClass.signUpformKey.currentState!.validate()) {
+                      if (controllerClass.signUpformKey.currentState!
+                          .validate()) {
                         //SIGN UP
-                        ref.read(authNotifierProvider.notifier).signUp(
+                        ref
+                            .read(authNotifierProvider.notifier)
+                            .signUp(
                               UsersModel(
-                                firstName: controllerClass.firstNameController.text.trim(),
-                                lastName: controllerClass.lastNameController.text.trim(),
-                                username: controllerClass.userNameController.text.trim(),
-                                email: controllerClass.emailController.text.trim(),
-                                password: controllerClass.passWordController.text.trim(),
-                                password2: controllerClass.passWordController2.text.trim(),
+                                firstName: controllerClass
+                                    .firstNameController.text
+                                    .trim(),
+                                lastName: controllerClass
+                                    .lastNameController.text
+                                    .trim(),
+                                username: controllerClass
+                                    .userNameController.text
+                                    .trim(),
+                                email:
+                                    controllerClass.emailController.text.trim(),
+                                password: controllerClass
+                                    .passWordController.text
+                                    .trim(),
+                                password2: controllerClass
+                                    .passWordController2.text
+                                    .trim(),
                               ).toJson(),
                               context: context,
-                            ).whenComplete(controllerClass.clearControllers);
+                            )
+                            .whenComplete(controllerClass.clearControllers);
                       }
                     },
                     child: const Text(TextConstant.createAccount),

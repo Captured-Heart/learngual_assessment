@@ -21,18 +21,20 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_animated_dialog: ^2.0.1
+  flutter_chat_types: ^3.6.2
   flutter_localizations:
     sdk: flutter
   flutter_riverpod: ^2.4.2
   font_awesome_flutter: ^10.5.0
   form_field_validator: ^1.1.0
   google_fonts: ^6.1.0
-  http:
+  http: null
   logger: ^2.0.2+1
   persistent_bottom_nav_bar: ^5.0.2
   shared_preferences: ^2.2.1
   shimmer: ^3.0.0
   url_launcher: ^6.1.14
+  web_socket_channel: ^2.4.0
 
 dev_dependencies:
   flutter_test:

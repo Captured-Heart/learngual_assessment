@@ -19,8 +19,7 @@ export 'package:form_field_validator/form_field_validator.dart'
     hide FormFieldValidator;
 export 'package:dartz/dartz.dart' hide State;
 export 'dart:developer' hide Flow;
-
-
+export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 //CONFIG
 export './config/config.dart';

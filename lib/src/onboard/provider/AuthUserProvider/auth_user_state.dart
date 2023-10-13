@@ -9,7 +9,7 @@ class AuthUserState extends Equatable {
 
   final bool isLoading;
   final String? errorMessage;
-  final String?  userDetails;
+  final String? userDetails;
 
   @override
   List<Object?> get props => [

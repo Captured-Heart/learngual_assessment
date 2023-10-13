@@ -41,6 +41,8 @@ class MyApp extends StatelessWidget {
                 return const HomeScreen();
               case NavRoutes.chatScreenRoute:
                 return const ChatHomeScreen();
+              case NavRoutes.mainScreenRoute:
+                return const MainScreen();
               default:
                 return const SignUpScreen();
             }

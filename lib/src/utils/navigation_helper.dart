@@ -1,6 +1,6 @@
 //pushNamed
 
-// ignore_for_file: inference_failure_on_instance_creation
+// ignore_for_file: inference_failure_on_instance_creation, inference_failure_on_function_invocation
 
 import 'package:learngual_assessment/app.dart';
 
@@ -38,18 +38,19 @@ void pushReplacementOnRootNav(BuildContext context, Widget child) =>
     Navigator.of(context, rootNavigator: true)
         .pushReplacement(MaterialPageRoute(builder: (context) => child));
 
-// void navBarPush({
-//   required BuildContext context,
-//   required Widget screen,
-//   required bool withNavBar,
-//   bool? popFirst = false,
-//   PageTransitionAnimation? pageTransitionsAnimation,
-// }) {
-//   popFirst == true ? pop(context) : null;
-//   PersistentNavBarNavigator.pushNewScreen(
-//     context,
-//     screen: screen,
-//     withNavBar: withNavBar,
-//     pageTransitionAnimation: pageTransitionsAnimation ?? PageTransitionAnimation.cupertino,
-//   );
-// }
+void navBarPush({
+  required BuildContext context,
+  required Widget screen,
+  required bool withNavBar,
+  bool? popFirst = false,
+  PageTransitionAnimation? pageTransitionsAnimation,
+}) {
+  popFirst == true ? pop(context) : null;
+  PersistentNavBarNavigator.pushNewScreen(
+    context,
+    screen: screen,
+    withNavBar: withNavBar,
+    pageTransitionAnimation:
+        pageTransitionsAnimation ?? PageTransitionAnimation.cupertino,
+  );
+}

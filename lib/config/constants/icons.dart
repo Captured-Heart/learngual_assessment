@@ -9,3 +9,7 @@ const IconData vert3dots = Icons.more_vert;
 const IconData doubleCheck = Icons.done_all;
 const IconData attachmentIcon = Icons.attachment;
 const IconData sendIcon = Icons.send;
+const IconData mailIcon = Icons.mail;
+const IconData locationIcon = Icons.location_on;
+const IconData personIcon = Icons.person_2;
+const IconData homeIcon = Icons.home;

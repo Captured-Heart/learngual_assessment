@@ -1,18 +1,48 @@
 // ignore_for_file: omit_local_variable_types
 
+import 'dart:convert';
+
 import 'package:learngual_assessment/app.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
-// String fullName(){
 
-// }
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // log(SharedPreferencesHelper.getStringPref(SharedPrefKeys.signUpDetails.name));
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (context.mounted) {
+        ref.read(homeScreenProvider.notifier).home(context: context);
+      }
+    });
+  }
+
+  String getFullName() {
+    var userDetails = SharedPreferencesHelper.getStringPref(SharedPrefKeys.signUpDetails.name);
+   
+  //  if (user) {
+     
+  //  } else {
+     
+  //  }
+    var details = jsonDecode(userDetails);
+    // ignore: avoid_dynamic_calls
+    var fullname = details != null ? '${details['first_name']} ${details['last_name']}' : 'null';
+    return fullname;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final scrollController = ScrollController();
     var faker = Faker();
     List<String> tabsString = ['all', 'fashion', 'sports', 'Phones', 'electronics'];
+// log(SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenRefresh.name));
     return DefaultTabController(
       length: tabsString.length,
       child: Scaffold(
@@ -23,7 +53,7 @@ class HomeScreen extends ConsumerWidget {
           titleSpacing: 15,
           toolbarHeight: kToolbarHeight * 1.4,
           leading: GestureDetector(
-            onTap: (){
+            onTap: () {
               // ref.read(authNotifierProvider.notifier).home(context: context);
             },
             child: CircleAvatar(
@@ -40,14 +70,23 @@ class HomeScreen extends ConsumerWidget {
             children: [
               const Text(TextConstant.hello),
               Text(
-                'Tolu Oluyole',
+                getFullName(),
                 textScaleFactor: 0.9,
                 style: context.textTheme.bodyMedium?.copyWith(fontWeight: AppFontWeight.w700),
               ),
             ],
           ),
           actions: [
-            const Text(TextConstant.signOut),
+            GestureDetector(
+              onTap: () {
+                SharedPreferencesHelper.removePref(SharedPrefKeys.tokenAccess.name);
+                pushReplacementOnRootNav(
+                  context,
+                  const LoginScreen(),
+                );
+              },
+              child: const Text(TextConstant.signOut),
+            ),
           ].rowInPadding(15),
           centerTitle: false,
         ),
