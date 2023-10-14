@@ -12,7 +12,6 @@
 
 </div>
 
-
 # Features
 
 - Create an account ($baseUrl/user/register)
@@ -64,7 +63,7 @@
 
 ## Tools
 
-- [web_socket_channel: by my friend SuperMike](https://pub.dev/packages/web_socket_channel)
+- [web_socket_channel: StreamChannel wrappers for WebSockets. Provides a cross-platform WebSocketChannel API, a cross-platform implementation of that API that communicates over an underlying StreamChannel.](https://pub.dev/packages/web_socket_channel)
 - [persistent_bottom_nav_bar: A persistent/static bottom navigation bar for Flutter.](https://pub.dev/packages/persistent_bottom_nav_bar)
 - [shared_preferences: Use this tool for persistent storage for simple data](https://pub.dev/packages/shared_preferences)
 - [HTTP: A composable, Future-based library for making HTTP requests. This package contains a set of high-level functions and classes that make it easy to consume HTTP resources. It's multi-platform, and supports mobile, desktop, and the browser.](https://pub.dev/packages/http)
@@ -73,5 +72,3 @@
 - [faker: A library for Dart that generates fake data such as images, names etc](https://pub.dev/packages/faker)
 
 For a full description of OSS used, see pubspec.yaml
-
-
