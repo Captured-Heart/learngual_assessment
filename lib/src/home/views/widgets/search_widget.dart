@@ -8,7 +8,7 @@ Row searchWidgetRow(BuildContext context) {
         decoration: InputDecoration(
           fillColor: LearnGualColor.indicatorInactiveColor.withOpacity(0.5),
           //  Color(0xFFFAFAFA),
-          hintText: TextConstant.search,
+          hintText: TextConstant.search.tr(),
           hintStyle: AppTextStyle.bodyMedium,
           prefixIcon: const Icon(searchIcon),
           border: borderDesign(),

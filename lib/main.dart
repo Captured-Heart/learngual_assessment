@@ -3,10 +3,19 @@ import 'package:learngual_assessment/src/onboard/views/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await SharedPreferencesHelper.initSharedPref();
   runApp(
-    const ProviderScope(
-      child: MyApp(),
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('es', 'ES'),
+      ],
+      saveLocale: true,
+      path: 'assets/l10n',
+      child: const ProviderScope(
+        child: MyApp(),
+      ),
     ),
   );
 }
@@ -23,7 +32,10 @@ class MyApp extends StatelessWidget {
       restorationScopeId: 'app',
       debugShowCheckedModeBanner: false,
       scaffoldMessengerKey: rootScaffoldMessengerKey,
-      onGenerateTitle: (BuildContext context) => TextConstant.appTitle,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      onGenerateTitle: (BuildContext context) => TextConstant.appTitle.tr(),
       theme: themeBuilder(defaultTheme: ThemeData.light(), isDark: false),
       darkTheme: themeBuilder(defaultTheme: ThemeData.dark(), isDark: true),
       home: const SplashScreen(),

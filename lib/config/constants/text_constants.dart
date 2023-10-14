@@ -2,6 +2,35 @@ import 'dart:convert';
 
 import 'package:learngual_assessment/app.dart';
 
+class L10n {
+  static final all = [
+    const Locale('en', 'US'),
+    const Locale('es', 'ES'),
+  ];
+
+  static String getFlag(String locale) {
+    switch (locale) {
+      case 'US':
+        return '🇺🇸';
+      case 'ES':
+        return '🇪🇸';
+      default:
+        return '🇺🇸';
+    }
+  }
+
+  static String getLang(String locale) {
+    switch (locale) {
+      case 'US':
+        return ' English';
+      case 'ES':
+        return ' Spanish';
+      default:
+        return ' English';
+    }
+  }
+}
+
 abstract class TextConstant {
   //
   static const appTitle = 'LearnGual';
@@ -59,12 +88,35 @@ abstract class TextConstant {
   static const dark = 'dark';
   static const light = 'light';
   static const theme = 'theme';
+  static const locale = 'locale';
   static const areYouSureYouWantToLogOut = 'Are you sure you want to log out?';
-  // static const or = 'or';
-  // static const or = 'or';// static const or = 'or';
-  // static const or = 'or';
-  // static const or = 'or';
-  // static const or = 'or';
-  // static const or = 'or';
+  static const testingTheAssessment = 'Testing the assessment websocket here';
+  static const testingTheCoinbase = 'Testing the coinbase websocket here';
+  static const checkInfo = 'Check Info';
+  static const inThisScreenIImplemented = 'In this screen, i implemented the web Socket Url';
+  static const forWord = 'for';
+  static const itsAnEchoWebsocket = "It's an Echo webscoket";
+  static const usingTheSameMethod =
+      'Using the same methods i used for the assessment link, and i got positive results.';
+  static const hereWeCanPassAMessage =
+      'Here, we can pass a message to the textfield, and click on the "Send" button';
+  static const infoGuide = 'Info/Guide';
+  static const toTestThisWebsocket = 'To test this websocket, click on the send button';
+  static const ignoreUsingTheTextField =
+      'Ignore using the textfield as this websocket needs a particular type of "Event"';
+  static const thisParticularEvent =
+      'This particular "Event" is already hardcoded into the send Button.';
+  static const theEventPassedToTheCoinbase = 'The event passed to the Coinbase Webscocket';
+  static const youCanCheckLine = 'you can check line ';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
+  // static const lorem = 'or';
   // static const lorem = 'or';
 }

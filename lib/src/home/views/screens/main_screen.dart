@@ -1,7 +1,6 @@
 // ignore_for_file: omit_local_variable_types
 
 import 'package:learngual_assessment/app.dart';
-import 'package:learngual_assessment/src/onboard/views/splash_screen.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   const MainScreen({super.key});
@@ -25,7 +24,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         padding: const NavBarPadding.symmetric(horizontal: 10, vertical: 15),
         controller: ref.watch(bottomNavControllerProvider),
         navBarStyle: NavBarStyle.style7,
-        hideNavigationBar: false,
+        hideNavigationBar: ref.watch(hideNavBarProvider),
         navBarHeight: kBottomNavigationBarHeight * 1.2,
         hideNavigationBarWhenKeyboardShows: true,
         popAllScreensOnTapOfSelectedTab: true,
@@ -40,8 +39,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         screens: [
           const HomeScreen(),
           const ChatHomeScreen(),
-          SplashScreen(),
-          // const LocationScreen(),
+          const LocationScreen(),
           ProfileScreen()
         ],
         decoration: const NavBarDecoration(
@@ -68,7 +66,7 @@ List<PersistentBottomNavBarItem> navBarsItems({required BuildContext context}) {
     PersistentBottomNavBarItem(
       textStyle: itemTextStyle,
       icon: const Icon(homeIcon), //cottage_outlined
-      title: TextConstant.home,
+      title: TextConstant.home.tr(),
       iconSize: 24,
       activeColorPrimary: context.theme.primaryColor,
       inactiveColorPrimary: LearnGualColorLight.textHint,
@@ -77,7 +75,7 @@ List<PersistentBottomNavBarItem> navBarsItems({required BuildContext context}) {
     PersistentBottomNavBarItem(
       textStyle: itemTextStyle,
       icon: const Icon(mailIcon),
-      title: TextConstant.chat,
+      title: TextConstant.chat.tr(),
       iconSize: 24,
       activeColorPrimary: context.theme.primaryColor,
       inactiveColorPrimary: LearnGualColorLight.textHint,
@@ -87,7 +85,7 @@ List<PersistentBottomNavBarItem> navBarsItems({required BuildContext context}) {
       textStyle: itemTextStyle,
       icon: const Icon(locationIcon),
       iconSize: 25,
-      title: TextConstant.location,
+      title: TextConstant.location.tr(),
       activeColorPrimary: context.theme.primaryColor,
       inactiveColorPrimary: LearnGualColorLight.textHint,
       activeColorSecondary: context.theme.scaffoldBackgroundColor,
@@ -95,7 +93,7 @@ List<PersistentBottomNavBarItem> navBarsItems({required BuildContext context}) {
     PersistentBottomNavBarItem(
       textStyle: itemTextStyle,
       icon: const Icon(personIcon),
-      title: TextConstant.profile,
+      title: TextConstant.profile.tr(),
       iconSize: 28,
       activeColorPrimary: context.theme.primaryColor,
       inactiveColorPrimary: LearnGualColorLight.textHint,

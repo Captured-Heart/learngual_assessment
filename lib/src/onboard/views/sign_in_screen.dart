@@ -26,21 +26,21 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    TextConstant.loginToYourAccount,
+                    TextConstant.loginToYourAccount.tr(),
                     style: context.textTheme.headlineLarge,
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Flexible(
-                        child: Text(TextConstant.dontHaveAnAcct),
+                       Flexible(
+                        child: Text(TextConstant.dontHaveAnAcct.tr()),
                       ),
                       TextButton(
                         onPressed: () {
                           pushReplaceNamed(
                               context, NavRoutes.createAccountScreenRoute);
                         },
-                        child: const Text(TextConstant.createAccount),
+                        child:  Text(TextConstant.createAccount.tr()),
                       )
                     ].rowInPadding(5),
                   ),
@@ -51,8 +51,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         authTextFieldWidget(
                           controller: controllerClass.userNameController,
                           context: context,
-                          label: TextConstant.userName,
-                          hintText: TextConstant.userName,
+                          label: TextConstant.userName.tr(),
+                          hintText: TextConstant.userName.tr(),
                           validator: RequiredValidator(
                               errorText: AuthErrors.requiredValue.errorMessage),
                           // validator: MultiValidator(
@@ -67,8 +67,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         authTextFieldWidget(
                           controller: controllerClass.passWordController,
                           context: context,
-                          label: TextConstant.password,
-                          hintText: TextConstant.passwordMustBe,
+                          label: TextConstant.password.tr(),
+                          hintText: TextConstant.passwordMustBe.tr(),
                           validator: RequiredValidator(
                               errorText: AuthErrors.requiredValue.errorMessage),
                         ),
@@ -96,7 +96,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       );
                     }
                   },
-                  child: const Text(TextConstant.login),
+                  child:  Text(TextConstant.login.tr()),
                 ),
               )
             ],

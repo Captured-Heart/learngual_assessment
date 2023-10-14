@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:learngual_assessment/app.dart';
 
 class ProfileScreen extends ConsumerWidget {
@@ -6,6 +8,7 @@ class ProfileScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final themeContext = Theme.of(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -62,16 +65,34 @@ class ProfileScreen extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            TextConstant.settings.toTitleCase(),
+                            TextConstant.settings.tr().toTitleCase(),
                             style: context.textTheme.bodyLarge,
                             textScaleFactor: 1.3,
                           ),
 
                           // THEME BUTTON
-                          Card(
-                            child: ListTile(
-                              title: Text(TextConstant.theme.toTitleCase()),
-                              leading: const Icon(nightIcon),
+                          GestureDetector(
+                            child: Card(
+                              child: ListTile(
+                                title: Text(TextConstant.theme.tr().toTitleCase()),
+                                leading: const Icon(nightIcon),
+                              ),
+                            ),
+                          ),
+
+                          //LOCALE
+                          GestureDetector(
+                            onTap: () {
+                              ref.read(hideNavBarProvider.notifier).update((state) => true);
+                              Timer(const Duration(milliseconds: 500), () {
+                                changeLocaleModal(context, themeContext, ref);
+                              });
+                            },
+                            child: Card(
+                              child: ListTile(
+                                title: Text(TextConstant.locale.tr().toTitleCase()),
+                                leading: const Icon(nightIcon),
+                              ),
                             ),
                           ),
 
@@ -89,17 +110,14 @@ class ProfileScreen extends ConsumerWidget {
                             child: Card(
                               child: ListTile(
                                 title: Text(
-                                  TextConstant.signOut.toTitleCase(),
+                                  TextConstant.signOut.tr().toTitleCase(),
                                   style: context.textTheme.labelSmall
                                       ?.copyWith(fontWeight: AppFontWeight.w600),
                                   textScaleFactor: 1.5,
                                 ),
-                                leading: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    logOutIcon,
-                                    color: LearnGualColor.textError,
-                                  ),
+                                leading: const Icon(
+                                  logOutIcon,
+                                  color: LearnGualColor.textError,
                                 ),
                               ),
                             ),
@@ -109,6 +127,65 @@ class ProfileScreen extends ConsumerWidget {
             ],
           )
         ],
+      ),
+    );
+  }
+
+  Future<void> changeLocaleModal(BuildContext context, ThemeData themeContext, WidgetRef ref) {
+    return showModalBottomSheet(
+      context: context,
+      isDismissible: false,
+      elevation: 4,
+      backgroundColor: themeContext.scaffoldBackgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        side: BorderSide(color: themeContext.primaryColor, width: 0.2),
+      ),
+      builder: (context) => Container(
+        // height: size.height * 0.2,
+        margin: EdgeInsets.symmetric(horizontal: context.sizeWidth(0.1)),
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: context.supportedLocales.map(
+            (locale) {
+              final flag = L10n.getFlag(locale.countryCode!);
+              final lang = L10n.getLang(locale.countryCode!);
+
+              return ListTile(
+                onTap: () {
+                  ref.read(hideNavBarProvider.notifier).update((state) => false);
+
+                  context.setLocale(locale);
+                  pop(context);
+                },
+                contentPadding: const EdgeInsets.symmetric(vertical: 5),
+                leading: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: themeContext.scaffoldBackgroundColor,
+                    border: Border.all(color: themeContext.primaryColor),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    flag,
+                    textScaleFactor: 1.6,
+                  ),
+                ),
+                title: Text(
+                  lang,
+                  textAlign: TextAlign.start,
+                  textScaleFactor: 1.3,
+                ),
+              );
+            },
+          ).toList(),
+        ),
       ),
     );
   }

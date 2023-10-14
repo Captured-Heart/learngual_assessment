@@ -77,8 +77,8 @@ ThemeData themeBuilder({
         foregroundColor: colorScheme.onSecondaryContainer,
       ),
       colorScheme: colorScheme,
-      snackBarTheme: SnackBarThemeData(
-          backgroundColor: scaffoldBackgroundColor, contentTextStyle: textTheme.bodyMedium),
+      // snackBarTheme: SnackBarThemeData(
+      //     backgroundColor: scaffoldBackgroundColor, contentTextStyle: textTheme.bodyMedium),
       inputDecorationTheme: InputDecorationTheme(
         border: textFieldBorder,
         focusedBorder: textFieldBorder,
@@ -104,8 +104,8 @@ ThemeData themeBuilder({
         backgroundColor: colorScheme.secondaryContainer,
         foregroundColor: colorScheme.onSecondaryContainer,
       ),
-      snackBarTheme: SnackBarThemeData(
-          backgroundColor: scaffoldBackgroundColor, contentTextStyle: textTheme.bodyMedium),
+      // snackBarTheme: SnackBarThemeData(
+      //     backgroundColor: scaffoldBackgroundColor, contentTextStyle: textTheme.bodyMedium),
       colorScheme: colorScheme,
       inputDecorationTheme: InputDecorationTheme(
         border: textFieldBorder,

@@ -8,3 +8,4 @@ const String upToSaleImg = 'assets/images/upToSale.png';
 const String upToSaleAvatar = 'assets/images/upToSaleAvatar.png';
 const String shorts1 = 'assets/images/shorts1.png';
 const String shorts2 = 'assets/images/shorts2.png';
+const String webSocketErrorPng = 'assets/images/webscoket_error2.png';

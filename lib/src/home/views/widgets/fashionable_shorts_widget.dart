@@ -16,7 +16,7 @@ Widget fashionableShortsWidget(BuildContext context, {required int index}) {
         ),
         ListTile(
           title: Text(
-            TextConstant.fashionableShorts,
+            TextConstant.fashionableShorts.tr(),
             style: context.textTheme.titleSmall,
           ),
           subtitle: Text(
@@ -48,7 +48,7 @@ Column fashionableShortsWidget2(
       ),
       ListTile(
         title: Text(
-          title ?? TextConstant.fashionableShorts,
+          title ?? TextConstant.fashionableShorts.tr(),
           style: context.textTheme.titleSmall,
         ),
         subtitle: Text(

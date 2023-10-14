@@ -22,18 +22,18 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
         // padding: AppEdgeInsets.eA20,
         children: [
           Text(
-            TextConstant.createYourAcct,
+            TextConstant.createYourAcct.tr(),
             style: context.textTheme.headlineLarge,
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Flexible(child: Text(TextConstant.haveAnAcct)),
+               Flexible(child: Text(TextConstant.haveAnAcct.tr())),
               TextButton(
                 onPressed: () {
                   pushReplaceNamed(context, NavRoutes.loginScreenRoute);
                 },
-                child: const Text(TextConstant.login),
+                child:  Text(TextConstant.login.tr()),
               )
             ],
           ),
@@ -45,8 +45,8 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 authTextFieldWidget(
                   controller: controllerClass.firstNameController,
                   context: context,
-                  label: TextConstant.firstName,
-                  hintText: TextConstant.enterFullNameAsWritten,
+                  label: TextConstant.firstName.tr(),
+                  hintText: TextConstant.enterFullNameAsWritten.tr(),
                   validator: RequiredValidator(
                     errorText: AuthErrors.requiredValue.errorMessage,
                   ),
@@ -54,8 +54,8 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 authTextFieldWidget(
                   controller: controllerClass.lastNameController,
                   context: context,
-                  label: TextConstant.lastName,
-                  hintText: TextConstant.enterFullNameAsWritten,
+                  label: TextConstant.lastName.tr(),
+                  hintText: TextConstant.enterFullNameAsWritten.tr(),
                   validator: RequiredValidator(
                     errorText: AuthErrors.requiredValue.errorMessage,
                   ),
@@ -63,8 +63,8 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 authTextFieldWidget(
                   controller: controllerClass.userNameController,
                   context: context,
-                  label: TextConstant.userName,
-                  hintText: TextConstant.enterFullNameAsWritten,
+                  label: TextConstant.userName.tr(),
+                  hintText: TextConstant.enterFullNameAsWritten.tr(),
                   validator: RequiredValidator(
                     errorText: AuthErrors.requiredValue.errorMessage,
                   ),
@@ -72,8 +72,8 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 authTextFieldWidget(
                   controller: controllerClass.emailController,
                   context: context,
-                  label: TextConstant.emailAddress,
-                  hintText: TextConstant.emailHint,
+                  label: TextConstant.emailAddress.tr(),
+                  hintText: TextConstant.emailHint.tr(),
                   validator: MultiValidator(
                     [
                       RequiredValidator(
@@ -88,8 +88,8 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 authTextFieldWidget(
                   controller: controllerClass.passWordController,
                   context: context,
-                  label: TextConstant.password,
-                  hintText: TextConstant.password,
+                  label: TextConstant.password.tr(),
+                  hintText: TextConstant.password.tr(),
                   validator: MultiValidator(
                     [
                       RequiredValidator(
@@ -105,8 +105,8 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                 authTextFieldWidget(
                   controller: controllerClass.passWordController2,
                   context: context,
-                  label: TextConstant.confirmPassword,
-                  hintText: TextConstant.password,
+                  label: TextConstant.confirmPassword.tr(),
+                  hintText: TextConstant.password.tr(),
                   validator: (value) => MatchValidator(
                     errorText: AuthErrors.passwordDoesNotMatch.errorMessage,
                   ).validateMatch(controllerClass.passWordController.text,
@@ -146,7 +146,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                             .whenComplete(controllerClass.clearControllers);
                       }
                     },
-                    child: const Text(TextConstant.createAccount),
+                    child:  Text(TextConstant.createAccount.tr()),
                   ),
                 ),
               ].columnInPadding(15),

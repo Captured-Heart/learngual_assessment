@@ -27,7 +27,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget build(BuildContext context) {
     final scrollController = ScrollController();
     var faker = Faker();
-    List<String> tabsString = ['all', 'fashion', 'sports', 'Phones', 'electronics'];
+    List<String> tabsString = [
+      TextConstant.all.tr(),
+      TextConstant.fashion.tr(),
+      TextConstant.sport.tr(),
+      TextConstant.phones.tr(),
+      TextConstant.electronics.tr(),
+    ];
 // log(SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenRefresh.name));
     return DefaultTabController(
       length: tabsString.length,
@@ -71,7 +77,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   const LoginScreen(),
                 );
               },
-              child: const Text(TextConstant.signOut),
+              child: Text(TextConstant.signOut.tr()),
             ),
           ].rowInPadding(15),
           centerTitle: false,
@@ -84,10 +90,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           children: [
             //SEARCH WIDGET
             searchWidgetRow(context),
-            const Row(
+            Row(
               children: [
-                Expanded(child: Text(TextConstant.popularItems)),
-                Text(TextConstant.viewAll),
+                Expanded(child: Text(TextConstant.popularItems.tr())),
+                Text(TextConstant.viewAll.tr()),
               ],
             ),
 
