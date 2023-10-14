@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:learngual_assessment/app.dart';
+
 abstract class TextConstant {
   //
   static const appTitle = 'LearnGual';
@@ -9,8 +13,7 @@ abstract class TextConstant {
   static const haveAnAcct = "Have an account?";
   static const login = 'Login';
   static const firstName = 'First Name';
-  static const enterFullNameAsWritten =
-      'enter your full name as its written on your id card';
+  static const enterFullNameAsWritten = 'enter your full name as its written on your id card';
   static const lastName = 'Last Name';
   static const userName = 'Username';
   static const emailAddress = 'Email address';
@@ -43,10 +46,20 @@ abstract class TextConstant {
   static const confirm = 'Confirm';
   static const location = 'Location';
   static const profile = 'Profile';
-  // static const or = 'or';
-  // static const or = 'or';// static const or = 'or';
-  // static const or = 'or';
-  // static const or = 'or';
+  static String getFullName() {
+    var userDetails = SharedPreferencesHelper.getStringPref(SharedPrefKeys.signUpDetails.name);
+
+    var details = jsonDecode(userDetails);
+    // ignore: avoid_dynamic_calls
+    var fullname = details != null ? '${details['first_name']} ${details['last_name']}' : 'null';
+    return fullname;
+  }
+
+  static const settings = 'settings';
+  static const dark = 'dark';
+  static const light = 'light';
+  static const theme = 'theme';
+  static const areYouSureYouWantToLogOut = 'Are you sure you want to log out?';
   // static const or = 'or';
   // static const or = 'or';// static const or = 'or';
   // static const or = 'or';

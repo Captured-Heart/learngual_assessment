@@ -1,8 +1,7 @@
 // ignore_for_file: omit_local_variable_types
 
-import 'dart:ui';
-
 import 'package:learngual_assessment/app.dart';
+import 'package:learngual_assessment/src/onboard/views/splash_screen.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   const MainScreen({super.key});
@@ -38,11 +37,12 @@ class _MainScreenState extends ConsumerState<MainScreen> {
           ref.read(bottomNavBarIndexProvider.notifier).update((state) => value);
         },
         items: navBarsItems(context: context),
-        screens: const [
-          HomeScreen(),
-          ChatHomeScreen(),
-          SignUpScreen(),
-          LoginScreen(),
+        screens: [
+          const HomeScreen(),
+          const ChatHomeScreen(),
+          SplashScreen(),
+          // const LocationScreen(),
+          ProfileScreen()
         ],
         decoration: const NavBarDecoration(
           // borderRadius: BorderRadius.circular(10.0),

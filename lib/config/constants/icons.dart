@@ -13,3 +13,7 @@ const IconData mailIcon = Icons.mail;
 const IconData locationIcon = Icons.location_on;
 const IconData personIcon = Icons.person_2;
 const IconData homeIcon = Icons.home;
+const IconData logOutIcon = Icons.power_settings_new;
+const IconData nightIcon = Icons.dark_mode;
+const IconData dayIcon = Icons.brightness_6;
+

@@ -15,6 +15,7 @@ void showScaffoldSnackBarMessage(
 }) =>
     rootScaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
+        
         content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -51,7 +52,7 @@ void warningDialogs({
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          titleTextStyle: AppTextStyle.listTileTitle,
+          titleTextStyle: context.textTheme.bodyLarge,
           title: Text(
             title ?? 'Error',
             textScaleFactor: 1.1,

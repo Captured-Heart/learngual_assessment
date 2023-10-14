@@ -28,6 +28,11 @@ void popToMain(BuildContext context) =>
 //.ofContext POP
 void pop(BuildContext context) => Navigator.of(context).pop();
 
+
+
+void popAndPush(BuildContext context, String routeName) => Navigator.of(context).restorablePopAndPushNamed(routeName);
+
+
 //.oFContext with rootNavigator POP
 void popRootNavigatorTrue(
         {required BuildContext context, required bool value}) =>

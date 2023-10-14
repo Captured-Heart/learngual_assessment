@@ -1,5 +1,6 @@
-const String appLogo = 'assets/images/learngual_logo.jpg';
+const String appLogo = 'assets/images/learngual_logo.png';
 const String imgPlaceholder = 'assets/images/placeholder1.png';
+const String imgPlaceholder2 = 'assets/images/gradient.jpg';
 const String noImagePlaceholder = 'assets/images/No-Image-Placeholder.png';
 const String noImagePlaceholderHttp =
     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/660px-No-Image-Placeholder.svg.png?20200912122019';
