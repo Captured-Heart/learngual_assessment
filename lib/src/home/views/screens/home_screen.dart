@@ -23,20 +23,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     });
   }
 
-  String getFullName() {
-    var userDetails = SharedPreferencesHelper.getStringPref(SharedPrefKeys.signUpDetails.name);
-   
-  //  if (user) {
-     
-  //  } else {
-     
-  //  }
-    var details = jsonDecode(userDetails);
-    // ignore: avoid_dynamic_calls
-    var fullname = details != null ? '${details['first_name']} ${details['last_name']}' : 'null';
-    return fullname;
-  }
-
   @override
   Widget build(BuildContext context) {
     final scrollController = ScrollController();
@@ -70,7 +56,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             children: [
               const Text(TextConstant.hello),
               Text(
-                getFullName(),
+                TextConstant.getFullName(),
                 textScaleFactor: 0.9,
                 style: context.textTheme.bodyMedium?.copyWith(fontWeight: AppFontWeight.w700),
               ),

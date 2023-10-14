@@ -31,6 +31,7 @@ export './src/widgets/widgets.dart';
 export './src/onboard/auth.dart';
 export './src/home/home.dart';
 export './src/chat/chat.dart';
-
+export './src/location/location.dart';
+export './src/profile/profile.dart';
 //UTILS
 export './src/utils/utils.dart';

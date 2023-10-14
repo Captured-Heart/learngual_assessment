@@ -3,21 +3,19 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math' hide log;
-
 import 'package:learngual_assessment/app.dart';
 import 'package:learngual_assessment/config/api_urls.dart';
-import 'package:learngual_assessment/src/chat/providers/coin_notifier.dart';
 import 'package:web_socket_channel/io.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
 // import 'package:web_socket_channel/web_socket_channel.dart';
 
-final webSocketFutureProvider = FutureProvider.autoDispose<IOWebSocketChannel>((ref) async {
+final webSocketFutureProvider = StreamProvider.autoDispose<IOWebSocketChannel>((ref) async* {
   Random r = Random();
   String key = base64.encode(List<int>.generate(8, (_) => r.nextInt(255)));
+  var url1 = 'https://ws-feed.pro.coinbase.com';
   var url2 =
       'https://api-assessment.meeney.com/ws/some_path/?token=${SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name)}';
   var client = HttpClient();
-  var request = await client.getUrl(Uri.parse(url2));
+  var request = await client.getUrl(Uri.parse(url1));
   request.headers.add('connection', 'Upgrade');
   request.headers.add('upgrade', 'websocket');
   request.headers.add('Sec-WebSocket-Version', '13');
@@ -30,17 +28,22 @@ final webSocketFutureProvider = FutureProvider.autoDispose<IOWebSocketChannel>((
   final socket1 = WebSocket.fromUpgradedSocket(socket, serverSide: false);
 
   final channel = IOWebSocketChannel(socket1);
-  return channel;
+  yield channel;
 });
 
+// 2ND INSTANCE
 final webSocketProvider = Provider.autoDispose(
   (ref) {
+    var url1 = 'wss://ws-feed.pro.coinbase.com';
     var url2 = 'wss://ws.ifelse.io';
     var url =
         '${ApiUrls.webSocketUrl}${SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name)}';
 
     try {
-      final channel = WebSocketChannel.connect(Uri.parse(url)); //'wss://ws-feed.pro.coinbase.com'
+      final channel = IOWebSocketChannel.connect(
+        Uri.parse(url),
+        headers: {'Connection': 'Upgrade', 'Upgrade': 'websocket'},
+      );
       return channel;
     } catch (e) {
       log('the logs from websocket: $e');
@@ -65,6 +68,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     final webSocket = ref.watch(webSocketProvider);
+    // ref.listen(webSocketFutureProvider, (previous, next) {});
 
     // final coins = ref.watch(coinWebSocketProvider);
     // log('${ApiUrls.webSocketUrl}${SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name)}');
@@ -90,7 +94,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
               child: StreamBuilder(
                 stream: webSocket?.stream,
                 builder: (context, snapshot) {
-                  log('data: ${snapshot.data}');
+                  // log('data: ${snapshot.data}');
                   listOfMessages.add(snapshot.data.toString());
                   return ListView(
                     children: List.generate(
@@ -124,25 +128,21 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                     context,
                     icon: sendIcon,
                     onTap: () {
-                      if (controller.emailController.text.isNotEmpty) {
-                        webSocket!.sink.add(controller.emailController.text);
-                      }
-                      // webSocket?.sink.close();
-                      // webSocket?.sink.add(
-                      //   jsonEncode(
-                      //     {
-                      //       "type": "subscribe",
-                      //       "channels": [
-                      //         {
-                      //           "name": "ticker",
-                      //           "product_ids": [
-                      //             "BTC-EUR",
-                      //           ]
-                      //         }
-                      //       ]
-                      //     },
-                      //   ),
-                      // );
+                      webSocket?.sink.add(
+                        jsonEncode(
+                          {
+                            "type": "subscribe",
+                            "channels": [
+                              {
+                                "name": "ticker",
+                                "product_ids": [
+                                  "BTC-EUR",
+                                ]
+                              }
+                            ]
+                          },
+                        ),
+                      );
                       // log(controller.emailController.text.trim());
                       controller.emailController.clear();
                       setState(() {});

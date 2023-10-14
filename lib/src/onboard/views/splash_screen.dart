@@ -13,8 +13,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     super.initState();
 
     navigateToNexToScreen().then((_) {
-      if (SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name)
-          .isNotEmpty) {
+      if (SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name).isNotEmpty) {
         pushReplaceNamed(context, NavRoutes.mainScreenRoute);
       } else {
         pushReplaceNamed(context, NavRoutes.createAccountScreenRoute);
@@ -29,8 +28,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: Image.asset(appLogo),
+        child: Image.asset(
+          appLogo,
+        ),
       ),
     );
   }
