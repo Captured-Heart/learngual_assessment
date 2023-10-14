@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1045501620992",
+    "project_id": "learngual-assesment",
+    "storage_bucket": "learngual-assesment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045501620992:android:7d15006ffe90bd5e3b39e5",
+        "android_client_info": {
+          "package_name": "com.capturedHeart.learngualTest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmwiID_dgdSwNv4aG8mK1xM8KIFiM2Vow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

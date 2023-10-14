@@ -1,9 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:learngual_assessment/app.dart';
+import 'package:learngual_assessment/firebase_options.dart';
 import 'package:learngual_assessment/src/onboard/views/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await SharedPreferencesHelper.initSharedPref();
   runApp(
     EasyLocalization(
