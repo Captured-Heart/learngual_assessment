@@ -89,10 +89,10 @@ void warningDialogs({
                     },
                 style: TextButton.styleFrom(
                     foregroundColor: LearnGualColor.textError),
-                child: const Text(TextConstant.cancel)),
+                child:  Text(TextConstant.cancel.tr())),
             TextButton(
                 onPressed: onPostiveAction,
-                child: const Text(TextConstant.confirm))
+                child:  Text(TextConstant.confirm.tr()))
           ],
         );
       },

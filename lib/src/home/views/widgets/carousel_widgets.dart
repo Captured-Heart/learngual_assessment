@@ -54,7 +54,7 @@ Container carouselWidget(BuildContext context) {
                 SizedBox(
                   width: context.sizeWidth(0.4),
                   child: AutoSizeText(
-                    TextConstant.getYourSpecialSale,
+                    TextConstant.getYourSpecialSale.tr(),
                     maxLines: 2,
                     style: context.textTheme.headlineMedium?.copyWith(
                       color: LearnGualColor.textDark,
@@ -68,7 +68,7 @@ Container carouselWidget(BuildContext context) {
                     borderRadius: AppBorderRadius.c8,
                   ),
                   child: Text(
-                    TextConstant.shopNow,
+                    TextConstant.shopNow.tr(),
                     style: context.textTheme.bodyLarge?.copyWith(
                       color: context.theme.primaryColorDark,
                     ),

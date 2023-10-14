@@ -1,5 +1,8 @@
 enum SharedPrefKeys {
   onBoarding,
+  assessmentDialog,
+  coinbaseDialog,
+  ifElseDialog,
   email,
   username,
   firstName,

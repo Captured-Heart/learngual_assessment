@@ -55,7 +55,7 @@
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
-		<!-- <string>nb</string> -->
+		<string>es</string>
 	</array>
 </dict>
 </plist>
