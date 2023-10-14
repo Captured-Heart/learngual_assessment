@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="./assets/images/learngual_logo.jpg" width="200"  />
+   <img src="./assets/learngual_logo.png" width="200" color="0xFF2676FC" />
   <br />
   <h1>LearnGual Assessment</h1>
   <strong>A Flutter app that displays stock market data and allows users to track their favorite stocks.</strong>
