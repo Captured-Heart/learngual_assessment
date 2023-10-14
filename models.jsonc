@@ -1,0 +1,51 @@
+{
+    "__className": "coins_model", // <- The base class name of the object.
+    "__path": "/lib/src/chat/models/domain", // <- override default path with a new one by adding '__path' key.
+    "type": "ticker",
+    "sequence": 23974633319,
+    "product_id": "BTC-EUR",
+    "price": "25401.03",
+    "open_24h": "25187.19",
+    "volume_24h": "347.59059353",
+    "low_24h": "25165.56",
+    "high_24h": "25528",
+    "volume_30d": "9881.69700132",
+    "best_bid": "25397.92",
+    "best_bid_size": "0.10311646",
+    "best_ask": "25401.03",
+    "best_ask_size": "0.03802821",
+    "side": "buy",
+    "time": "2023-10-13T09:46:49.710696Z",
+    "trade_id": 72875290,
+    "last_size": "0.00197179"
+    
+    
+    // "savedPerc": 2.33,
+    // "availableQuantity": 1
+    // "cancelledAt":"",
+    // "pickedUpAt": "",
+    // "deliveredAt":"",
+    // "currentPosition": "",
+    // "riderId": "",
+    // "updatedAt": "",
+    // "deletedAt":"",
+    // "orderItems": [],
+    // "status": 0,
+    // "fulfillmentHubId": ""
+    // "address": {}
+    // "address": {}
+    // "address": {}
+    // "address": {}
+
+    
+
+  }
+
+
+
+  // email: “”,
+  // password: “”,
+  // password2: “”,
+  // username: “”,
+  // first_name: “‘,
+  // last_name: “”,

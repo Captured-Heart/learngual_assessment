@@ -26,8 +26,7 @@ class AppEdgeInsets {
   static const EdgeInsets eH16 = EdgeInsets.symmetric(horizontal: 16);
   static const EdgeInsets eH20 = EdgeInsets.symmetric(horizontal: 20);
 
-
-   static const EdgeInsets eV4 = EdgeInsets.symmetric(vertical: 4);
+  static const EdgeInsets eV4 = EdgeInsets.symmetric(vertical: 4);
   static const EdgeInsets eV8 = EdgeInsets.symmetric(vertical: 8);
   static const EdgeInsets eV12 = EdgeInsets.symmetric(vertical: 12);
   static const EdgeInsets eV16 = EdgeInsets.symmetric(vertical: 16);

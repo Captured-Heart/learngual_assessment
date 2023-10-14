@@ -11,8 +11,14 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
     navigateToNexToScreen().then((_) {
-      pushReplacement(context, const SignUpScreen());
+      if (SharedPreferencesHelper.getStringPref(SharedPrefKeys.tokenAccess.name)
+          .isNotEmpty) {
+        pushReplaceNamed(context, NavRoutes.mainScreenRoute);
+      } else {
+        pushReplaceNamed(context, NavRoutes.createAccountScreenRoute);
+      }
     });
   }
 

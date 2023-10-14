@@ -4,7 +4,7 @@ CachedNetworkImage cachedNetworkImageWidget({
   required String? imgUrl,
   required double height,
   double? width,
-  BoxFit ? fit,
+  BoxFit? fit,
   bool? isProgressIndicator = false,
   // double? loaderHeight,
   // double? loaderWidth,

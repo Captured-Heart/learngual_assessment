@@ -13,7 +13,7 @@ class _ChatHomeScreenState extends ConsumerState<ChatHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButtonIcon(),
+        leading: const BackButton(),
         title: Text(
           TextConstant.chat,
           style: context.textTheme.bodyMedium,
@@ -37,8 +37,14 @@ class _ChatHomeScreenState extends ConsumerState<ChatHomeScreen> {
                 padding: AppEdgeInsets.eV8,
                 children: [
                   ListTile(
-                    onTap: () =>
-                        pushAsVoid(context, const ChatScreen(appBarTitle: 'Assessment Text')),
+                    onTap: () {
+                      navBarPush(
+                        context: context,
+                        screen:
+                            const ChatScreen(appBarTitle: 'Assessment Text'),
+                        withNavBar: false,
+                      );
+                    },
                     leading: const CircleAvatar(),
                     title: const Text('Assessment Test'),
                     subtitle: const Text('Assessment Test'),

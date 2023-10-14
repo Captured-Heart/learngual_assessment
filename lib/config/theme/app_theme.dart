@@ -29,7 +29,8 @@ ThemeData themeBuilder({
     seedColor: isDark ? _kPrimaryDarkColor : _kPrimaryLightColor,
     brightness: brightness,
   );
-  final Color scaffoldBackgroundColor = isDark ? _kBackgroundDarkColor : colorScheme.background;
+  final Color scaffoldBackgroundColor =
+      isDark ? _kBackgroundDarkColor : colorScheme.background;
 
   const OutlineInputBorder textFieldBorder = OutlineInputBorder(
     borderSide: BorderSide.none,
@@ -66,7 +67,8 @@ ThemeData themeBuilder({
       useMaterial3: true,
       primaryColor: _kPrimaryDarkColor,
       iconTheme: defaultTheme.iconTheme.copyWith(size: _kIconSize),
-      primaryIconTheme: defaultTheme.primaryIconTheme.copyWith(size: _kIconSize),
+      primaryIconTheme:
+          defaultTheme.primaryIconTheme.copyWith(size: _kIconSize),
       textTheme: darkTextTheme(defaultTheme.textTheme),
       scaffoldBackgroundColor: scaffoldBackgroundColor,
       textButtonTheme: TextButtonThemeData(style: textButtonStyle),
@@ -91,7 +93,8 @@ ThemeData themeBuilder({
     return ThemeData(
       useMaterial3: true,
       iconTheme: defaultTheme.iconTheme.copyWith(size: _kIconSize),
-      primaryIconTheme: defaultTheme.primaryIconTheme.copyWith(size: _kIconSize),
+      primaryIconTheme:
+          defaultTheme.primaryIconTheme.copyWith(size: _kIconSize),
       textTheme: lightTextTheme(defaultTheme.textTheme),
       primaryTextTheme: defaultTheme.primaryTextTheme.merge(textTheme),
       scaffoldBackgroundColor: scaffoldBackgroundColor,

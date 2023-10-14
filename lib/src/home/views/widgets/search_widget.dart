@@ -21,18 +21,25 @@ Row searchWidgetRow(BuildContext context) {
   ].rowInPadding(5));
 }
 
-Card actionBTNCard(BuildContext context, {IconData ? icon}) {
-  return Card(
-    shape: const RoundedRectangleBorder(
-      borderRadius: AppBorderRadius.c12,
+GestureDetector actionBTNCard(
+  BuildContext context, {
+  IconData? icon,
+  VoidCallback? onTap,
+}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Card(
+      shape: const RoundedRectangleBorder(
+        borderRadius: AppBorderRadius.c12,
+      ),
+      color: context.theme.primaryColor,
+      child: Icon(
+        icon ?? filterIcon,
+        color: context.theme.scaffoldBackgroundColor,
+      ).padAll(10),
     ),
-    color: context.theme.primaryColor,
-    child: Icon(
-     icon ?? filterIcon,
-      color: context.theme.scaffoldBackgroundColor,
-    ).padAll(10),
   );
 }
 
-OutlineInputBorder borderDesign() =>
-    const OutlineInputBorder(borderRadius: AppBorderRadius.c12, borderSide: BorderSide.none);
+OutlineInputBorder borderDesign() => const OutlineInputBorder(
+    borderRadius: AppBorderRadius.c12, borderSide: BorderSide.none);

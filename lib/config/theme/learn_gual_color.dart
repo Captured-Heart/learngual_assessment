@@ -10,6 +10,7 @@ class LearnGualColor {
   static const Color indicatorInactiveColor = Color(0xFFE5EAE7);
   static const Color indicatorActiveColor = Color(0xFF9E9FB2);
   static const Color textButton = Color(0xFF2676FC);
+  static const Color success = Color(0xFF239f77);
 
 //background
   static const Color scaffoldBackgroundColor = Color(0xFF181617);
