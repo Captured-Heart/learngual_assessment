@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       onGenerateTitle: (BuildContext context) => TextConstant.appTitle.tr(),
       theme: themeBuilder(defaultTheme: ThemeData.light(), isDark: false),
       darkTheme: themeBuilder(defaultTheme: ThemeData.dark(), isDark: true),
-      home: const SplashScreen(),
+      home:  const SplashScreen(),
       onGenerateRoute: (RouteSettings routeSettings) {
         return MaterialPageRoute<void>(
           settings: routeSettings,

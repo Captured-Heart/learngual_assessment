@@ -8,7 +8,7 @@
 <sub>Built by <a href="https://twitter.com/CapturedWarrior">Captured-Heart</a></sub>
 <br />
 
-<i><h3 style="color: green">You can download the apk directly from my firebase distribution console <a href="https://appdistribution.firebase.dev/i/e5a7b73fefe2dd61">LearnGual Assessment</a></h3></i>
+<i><h3 style="color: green">You can download the apk directly from my firebase distribution console <a href="https://appdistribution.firebase.google.com/testerapps/1:1045501620992:android:7d15006ffe90bd5e3b39e5/releases/53iq4chg2o4do?utm_source=firebase-console">LearnGual Assessment</a></h3></i>
 
 </div>
 

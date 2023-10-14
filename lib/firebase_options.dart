@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,15 +49,6 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDowE48MTEgxl_7-lAcNn9FyngudEyBPfE',
-    appId: '1:1045501620992:web:7b35fef21181ee0b3b39e5',
-    messagingSenderId: '1045501620992',
-    projectId: 'learngual-assesment',
-    authDomain: 'learngual-assesment.firebaseapp.com',
-    storageBucket: 'learngual-assesment.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDmwiID_dgdSwNv4aG8mK1xM8KIFiM2Vow',
     appId: '1:1045501620992:android:7d15006ffe90bd5e3b39e5',
@@ -61,15 +58,6 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBTXZ3lKhX7t33oPE7-Af1ZG95m0U9oxyU',
-    appId: '1:1045501620992:ios:2271d048e42d1d543b39e5',
-    messagingSenderId: '1045501620992',
-    projectId: 'learngual-assesment',
-    storageBucket: 'learngual-assesment.appspot.com',
-    iosBundleId: 'com.capturedHeart.learngualTest',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBTXZ3lKhX7t33oPE7-Af1ZG95m0U9oxyU',
     appId: '1:1045501620992:ios:2271d048e42d1d543b39e5',
     messagingSenderId: '1045501620992',
